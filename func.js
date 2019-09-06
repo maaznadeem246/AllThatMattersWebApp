@@ -22,9 +22,11 @@ const detailss = (val) => {
         retries: 3
     }).then(() => {
         if(!val){
-            getIpDetails()
+            let ipd = getIpDetails()
+            return ipd
         }else{
-            getLonglat(val)
+          let ipdf = getLonglat(val)
+          return ipdf
         }
         
     }).catch(() => {
@@ -40,8 +42,9 @@ const getIpDetails = () => {
         if (response != undefined) {
             if (response.statusCode == 200) {
                 const jdata = JSON.parse(response.body)
-                getLonglat(jdata.country_name);
-                //console.log(jdata.country_name)
+              let gllg =  getLonglat(jdata.country_name);
+              return gllg  
+              //console.log(jdata.country_name)
             } else {
                 console.log(error)
             }
@@ -60,7 +63,8 @@ const getLonglat = (sear) => {
     })
         .send()
         .then(response => {
-             getlonlatDetails(response.body.features[0].center[1], response.body.features[0].center[0])
+         let gll = getlonlatDetails(response.body.features[0].center[1], response.body.features[0].center[0])
+            return gll
         });
 
 }
@@ -79,10 +83,10 @@ const getlonlatDetails = (lat, lon) => {
             console.log(chalk.bgYellowBright.black.bold(' Country '), jdata.Country.LocalizedName)
             console.log('')
             console.log(chalk.bgYellowBright.black.bold(' Region '), jdata.Region.LocalizedName)
-            getForcastDetails(jdata.Key)
+            let temp = getForcastDetails(jdata.Key)
             //console.log(jdata)
-            getNewsDetails(jdata.Country.ID)
-
+            let news = getNewsDetails(jdata.Country.ID)
+            return {temp,news}
         } else {
             //              console.log(jdata)
             console.log('')
@@ -105,6 +109,7 @@ const getForcastDetails = (key) => {
         if (jdata.Code == undefined) {
             console.log('')
             console.log(chalk.bgYellowBright.black.bold(' Temperature '), celcius)
+            return celcius
         } 
     }
     request(url, callback)
@@ -133,6 +138,7 @@ const getNewsDetails = (country) => {
                     console.log(chalk.bgYellowBright.black.bold(' News :'), response.articles[i].description)
 
                 }
+                return response.articles
             } else {
                 console.log(chalk.bgRedBright.white.bold(' No News Available '))
             }
