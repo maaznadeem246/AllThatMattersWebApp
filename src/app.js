@@ -1,9 +1,10 @@
-const { detailss} = require('../func')
+const { searchIt} = require('../func')
 const express = require('express')
 const app = express()
 const path = require('path')
 const hbs = require('hbs')
 const request = require("request")
+var validator = require('validator');
 
 const veiwsFolder = path.join(__dirname, '../templates/views')
 app.set('views', veiwsFolder)
@@ -21,8 +22,20 @@ app.get('/',(req,res)=>{
     res.render('home')
 })
 
-app.get('/search',(req,res)=>{
-    
+app.get('/search',  (req,res)=>{
+    console.log(req.query.word)
+    if (req.query.word != undefined){
+    const isA = validator.isAlpha(req.query.word)
+    const word = req.query.word
+        if (!isA  ){
+            searchIt(res, '')  
+        }else{
+            searchIt(res, word.toLowerCase()) 
+        }
+    }else{
+        res.send({error:{Code:'WordKeyIsInvalid',Message:'Word key is not Available'}})
+    }
+
 })
 
 
@@ -37,10 +50,11 @@ app.listen(port, () => {
 })
 
 // if(process.argv.length == 2){
-//     detailss('')     
+//     searchIt('')     
 // }else{
 // //    console.log(process.argv[2])
-//     detailss(process.argv[2])
+//    const d =  searchIt(process.argv[2])
+//    console.log(d+' d')
 // }
 
 

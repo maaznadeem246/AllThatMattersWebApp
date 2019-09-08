@@ -1,11 +1,16 @@
 <html>
     <head>
+
     <link rel="stylesheet" href="./css/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/bootstrap/css/custom.css">
+        <link rel="stylesheet" href='./css/styles.css'>
     </head>
     <body>
+
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
+                <div class='row'>
+                    <div class='col-8'>
                 <div class='row'>
                     <div class='col'>
                        <h1 class="display-4">All That Matters Web App</h1>
@@ -14,36 +19,73 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <form>
+                        <form onsubmit="return false" id='searhForm'>
                             <div class="form-group ">
 
-                                <input type="text" class="form-control" id="exampleInputSearch" aria-describedby="searchHelp"
+                                <input type="text" class="form-control" id="searchBox" aria-describedby="searchHelp"
                                     placeholder="Enter Country">
                         
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        
+                                         
                               <small id="searchHelp" class="form-text text-muted">Give the Country above related that you need details.</small>
-                            
+                                
 
                             </div>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
-                                    aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button">Button</button>
-                                    <button class="btn btn-outline-secondary" type="button">Button</button>
-                                </div>
-                            </div>
+                        <button type="button" onclick="searchIt()" class="btn btn-primary">Search</button>
 
                         </form>
                     </div>
-                    <div class="col">
-                        
+                    <div class='col'>
+
                     </div>
+                </div>
+                </div>
+
+                    <div class="col">
+                        <div class='row'>
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h4 class="card-title">Details</h4>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <div class="d-flex flex-row">
+                                                <h6 class="card-text  text-muted p-2">Country : </h6>
+                                                <h6 class="card-text   p-2" id='countryName'>-</h6>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="d-flex flex-row">
+                                                <h6 class="card-text mb-2 text-muted p-2">Region : </h6>
+                                                <h6 class="card-text mb-2  p-2" id='regionName'>-</h6>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="d-flex flex-row">
+                                                <h6 class="card-text mb-2 text-muted p-2">Temperature : </h6>
+                                                <h6 class="card-text mb-2  p-2" id='temp'>-</h6>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class='container-fluid'>
+            <div class='row'>
+
+                <div class=" card-deck d-flex flex-wrap justify-content-center"  id='newsDiv'>
+                    
                 </div>
 
             </div>
         </div>
+
+        <script src='./js/index.js'></script>
     <script src="./css/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
     <script src="./css/bootstrap/js/Bootstrap_tutorial.js"></script>
     </body>

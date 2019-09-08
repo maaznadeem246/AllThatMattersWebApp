@@ -19,6 +19,7 @@
     "nodemon": "^1.19.2",
     "request": "^2.88.0",
     "request-api": "^1.1.2",
+    "validator": "^11.1.0",
     "yargs": "^14.0.0"
   }
 }
