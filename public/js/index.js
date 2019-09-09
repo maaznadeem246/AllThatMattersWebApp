@@ -24,7 +24,7 @@ function searchIt(){
         } else {
             contName.innerHTML = res.country
             regionName.innerHTML = res.region
-            temp.innerHTML = res.temperature+'<sup>o</sup>C'
+            temp.innerHTML = res.temperature+' <sup>o</sup>C'
             newsDivs(res.news,newsDiv)
             console.log(res)
         }

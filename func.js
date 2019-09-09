@@ -70,7 +70,7 @@ const getLonglat = (res,sear) => {
 
 // This function will bring the Details of Weather from Accuweather API using Longitute and Latitude.
 const getlonlatDetails = (res ,lat, lon) => {
-    const url = 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=LGNfqXMoIDKfeRZAbC0B3uPpJA2rHhhY&q=' + `${lat}` + '%2C' + `${lon}`;
+    const url = 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=aGwH16zhXAvd2FpaIGidHA4gRr0JIDgm&q=' + `${lat}` + '%2C' + `${lon}`;
     const callback = (e, response) => {
     const jdata = JSON.parse(response.body)
         //console.log(jdata)
@@ -93,7 +93,7 @@ const getlonlatDetails = (res ,lat, lon) => {
 // In getLongLatDetails function we will get a key  
 // that key we will use in this functions to get the forcast Details from Accuweather API
 const getForcastDetails = (res,key,c,count,reg) => {
-    const url = 'http://dataservice.accuweather.com/forecasts/v1/hourly/1hour/' + `${key}` + '?apikey=LGNfqXMoIDKfeRZAbC0B3uPpJA2rHhhY';
+    const url = 'http://dataservice.accuweather.com/forecasts/v1/hourly/1hour/' + `${key}` + '?apikey=aGwH16zhXAvd2FpaIGidHA4gRr0JIDgm';
 
     const callback = (e, response) => {
     const jdata = JSON.parse(response.body)

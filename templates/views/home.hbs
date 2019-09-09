@@ -1,8 +1,8 @@
 <html>
     <head>
-
+<link rel="stylesheet" href="./css/bootstrap/css/custom.css">
     <link rel="stylesheet" href="./css/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/bootstrap/css/custom.css">
+   
         <link rel="stylesheet" href='./css/styles.css'>
     </head>
     <body>
@@ -10,39 +10,39 @@
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <div class='row'>
-                    <div class='col-8'>
-                <div class='row'>
-                    <div class='col'>
-                       <h1 class="display-4">All That Matters Web App</h1>
-                    <p class="lead">You can get the  Forcast details and news over here</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <form onsubmit="return false" id='searhForm'>
-                            <div class="form-group ">
+                       <div class=' col-8 '>
+                        <div class='row'>
+                            <div class='col'>
+                            <h1 class="display-4">All That Matters Web App</h1>
+                            <p class="lead">You can get the  Forcast details and news over here</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <form onsubmit="return false" id='searhForm'>
+                                    <div class="form-group ">
 
-                                <input type="text" class="form-control" id="searchBox" aria-describedby="searchHelp"
-                                    placeholder="Enter Country">
-                        
-                                         
-                              <small id="searchHelp" class="form-text text-muted">Give the Country above related that you need details.</small>
+                                        <input type="text" class="form-control" id="searchBox" aria-describedby="searchHelp"
+                                            placeholder="Enter Country">
                                 
+                                                
+                                    <small id="searchHelp" class="form-text text-muted">Give the Country above related that you need details.</small>
+                                        
+
+                                    </div>
+                                <button type="button" onclick="searchIt()" class="btn btn-primary">Search</button>
+
+                                </form>
+                            </div>
+                            <div class='col'>
 
                             </div>
-                        <button type="button" onclick="searchIt()" class="btn btn-primary">Search</button>
-
-                        </form>
+                        </div>
                     </div>
-                    <div class='col'>
-
-                    </div>
-                </div>
-                </div>
-
-                    <div class="col">
+                    <div class="col-4 " >
                         <div class='row'>
-                            <div class="card" style="width: 18rem;">
+                            <div class='col'>
+                            <div class="card " style="width: 18rem;">
                                 <div class="card-body">
                                     <h4 class="card-title">Details</h4>
                                     <ul class="list-group list-group-flush">
@@ -68,6 +68,7 @@
 
 
                                 </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -77,11 +78,16 @@
         </div>
         <div class='container-fluid'>
             <div class='row'>
-
-                <div class=" card-deck d-flex flex-wrap justify-content-center"  id='newsDiv'>
-                    
+                <div class='col'>
+                    <h1 class='d-flex justify-content-center'>News</h1>
                 </div>
-
+            </div>
+            <div class='row'>
+                <div class='col'>
+                <div class=" card-deck d-flex flex-wrap justify-content-center"  id='newsDiv'>
+                        <h3 class=' text-muted '> No news</h3>
+                </div>
+                </div>
             </div>
         </div>
 
